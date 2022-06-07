@@ -5,6 +5,7 @@ import (
 	"github.com/venomuz/project5/API-GATEWAY/config"
 	"github.com/venomuz/project5/API-GATEWAY/pkg/logger"
 	"github.com/venomuz/project5/API-GATEWAY/services"
+	"net/http"
 )
 
 func main() {
@@ -22,7 +23,7 @@ func main() {
 		ServiceManager: serviceManager,
 	})
 
-	if err := server.Run(cfg.HTTPPort); err != nil {
+	if err := http.ListenAndServe(cfg.HTTPPort, server); err != nil {
 		log.Fatal("failed to run http server", logger.Error(err))
 		panic(err)
 	}

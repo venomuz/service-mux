@@ -1,6 +1,7 @@
 package postgres
 
 import (
+	"fmt"
 	"github.com/jmoiron/sqlx"
 	pb "github.com/venomuz/project5/PostService/genproto"
 )
@@ -66,6 +67,7 @@ func (r *postRepo) PostDeleteByID(ID string) (*pb.OkBOOL, error) {
 func (r *postRepo) PostGetAllPosts(ID string) (*pb.AllPost, error) {
 	allpost := pb.AllPost{}
 	posts := allpost.Posts
+	fmt.Println(ID)
 	GetPostQuery := `SELECT id,name,description FROM posts WHERE user_id = $1`
 	rows, err := r.db.Query(GetPostQuery, ID)
 	if err != nil {
