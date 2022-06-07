@@ -3,8 +3,8 @@ package services
 import (
 	"fmt"
 
-	"github.com/venomuz/project4/API-GATEWAY/config"
-	pb "github.com/venomuz/project4/API-GATEWAY/genproto"
+	"github.com/venomuz/project5/API-GATEWAY/config"
+	pb "github.com/venomuz/project5/API-GATEWAY/genproto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/resolver"

@@ -1,7 +1,7 @@
 package repo
 
 import (
-	pb "github.com/venomuz/project4/UserService/genproto"
+	pb "github.com/venomuz/project5/UserService/genproto"
 )
 
 //UserStorageI ...

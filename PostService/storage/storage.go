@@ -2,8 +2,8 @@ package storage
 
 import (
 	"github.com/jmoiron/sqlx"
-	"github.com/venomuz/project4/PostService/storage/postgres"
-	"github.com/venomuz/project4/PostService/storage/repo"
+	"github.com/venomuz/project5/PostService/storage/postgres"
+	"github.com/venomuz/project5/PostService/storage/repo"
 )
 
 //IStorage ...

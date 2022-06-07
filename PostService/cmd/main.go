@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/venomuz/project4/PostService/config"
-	pb "github.com/venomuz/project4/PostService/genproto"
-	"github.com/venomuz/project4/PostService/pkg/db"
-	"github.com/venomuz/project4/PostService/pkg/logger"
-	"github.com/venomuz/project4/PostService/service"
+	"github.com/venomuz/project5/PostService/config"
+	pb "github.com/venomuz/project5/PostService/genproto"
+	"github.com/venomuz/project5/PostService/pkg/db"
+	"github.com/venomuz/project5/PostService/pkg/logger"
+	"github.com/venomuz/project5/PostService/service"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"net"

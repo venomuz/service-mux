@@ -1,7 +1,7 @@
 package grpcClient
 
 import (
-	"github.com/venomuz/project4/PostService/config"
+	"github.com/venomuz/project5/PostService/config"
 )
 
 //GrpcClientI ...

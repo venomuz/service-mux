@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/venomuz/project4/API-GATEWAY/api"
-	"github.com/venomuz/project4/API-GATEWAY/config"
-	"github.com/venomuz/project4/API-GATEWAY/pkg/logger"
-	"github.com/venomuz/project4/API-GATEWAY/services"
+	"github.com/venomuz/project5/API-GATEWAY/api"
+	"github.com/venomuz/project5/API-GATEWAY/config"
+	"github.com/venomuz/project5/API-GATEWAY/pkg/logger"
+	"github.com/venomuz/project5/API-GATEWAY/services"
 )
 
 func main() {

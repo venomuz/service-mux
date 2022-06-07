@@ -2,8 +2,8 @@ package grpcClient
 
 import (
 	"fmt"
-	"github.com/venomuz/project4/UserService/config"
-	pb "github.com/venomuz/project4/UserService/genproto"
+	"github.com/venomuz/project5/UserService/config"
+	pb "github.com/venomuz/project5/UserService/genproto"
 	"google.golang.org/grpc"
 )
 

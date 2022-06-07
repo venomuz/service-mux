@@ -2,10 +2,10 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	v1 "github.com/venomuz/project4/API-GATEWAY/api/handlers/v1"
-	"github.com/venomuz/project4/API-GATEWAY/config"
-	"github.com/venomuz/project4/API-GATEWAY/pkg/logger"
-	"github.com/venomuz/project4/API-GATEWAY/services"
+	v1 "github.com/venomuz/project5/API-GATEWAY/api/handlers/v1"
+	"github.com/venomuz/project5/API-GATEWAY/config"
+	"github.com/venomuz/project5/API-GATEWAY/pkg/logger"
+	"github.com/venomuz/project5/API-GATEWAY/services"
 )
 
 type Option struct {

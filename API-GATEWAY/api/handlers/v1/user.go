@@ -3,8 +3,8 @@ package v1
 import (
 	"context"
 	"github.com/gin-gonic/gin"
-	pb "github.com/venomuz/project4/API-GATEWAY/genproto"
-	l "github.com/venomuz/project4/API-GATEWAY/pkg/logger"
+	pb "github.com/venomuz/project5/API-GATEWAY/genproto"
+	l "github.com/venomuz/project5/API-GATEWAY/pkg/logger"
 	"google.golang.org/protobuf/encoding/protojson"
 	"net/http"
 	"time"

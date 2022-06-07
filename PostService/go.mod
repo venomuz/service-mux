@@ -1,4 +1,4 @@
-module github.com/venomuz/project4/PostService
+module github.com/venomuz/project5/PostService
 
 go 1.18
 

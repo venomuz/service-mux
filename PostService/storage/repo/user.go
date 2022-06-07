@@ -1,7 +1,7 @@
 package repo
 
 import (
-	pb "github.com/venomuz/project4/PostService/genproto"
+	pb "github.com/venomuz/project5/PostService/genproto"
 )
 
 //PostStorageI ...
