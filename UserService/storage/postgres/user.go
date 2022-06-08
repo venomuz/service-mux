@@ -105,8 +105,9 @@ func (r *userRepo) GetList(page, limit int64) (*pb.LimitResponse, error) {
 			return nil, err
 		}
 		user.Address = &addr
+		userss.Users = append(userss.Users, &user)
 	}
-	userss.Users = append(userss.Users, &user)
+
 	var count int64
 	CountUsersQuery := `SELECT count(*) FROM users`
 	err = r.db.QueryRow(CountUsersQuery).Scan(&count)

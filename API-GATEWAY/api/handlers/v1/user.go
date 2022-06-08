@@ -80,6 +80,8 @@ func (h *handlerV1) GetUser(w http.ResponseWriter, r *http.Request) {
 		Limit: limit,
 	})
 	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+
 	err = json.NewEncoder(w).Encode(response)
 	if err != nil {
 		if err != nil {
