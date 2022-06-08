@@ -9,6 +9,7 @@ import (
 	"google.golang.org/protobuf/encoding/protojson"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 	"time"
 )
 
@@ -38,11 +39,16 @@ func (h *handlerV1) CreateUser(w http.ResponseWriter, r *http.Request) {
 		h.log.Error("failed to bind json", l.Error(err))
 		return
 	}
-	marshal, err := json.Marshal(response)
+	w.WriteHeader(http.StatusCreated)
+
+	err = json.NewEncoder(w).Encode(response)
 	if err != nil {
+		if err != nil {
+			fmt.Fprintf(w, "Error while marshiling to json")
+		}
+		h.log.Error("failed to bind json", l.Error(err))
 		return
 	}
-	w.Write(marshal)
 }
 
 // GetUser gets user by id
@@ -55,6 +61,31 @@ func (h *handlerV1) GetUser(w http.ResponseWriter, r *http.Request) {
 	jspbMarshal.UseProtoNames = true
 	queryParams := r.URL.Query()
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "Got parameter id:%s!\n", queryParams["id"][0])
-	fmt.Fprintf(w, "Got parameter category:%s!", queryParams["category"][0])
+	page, err := strconv.ParseInt(queryParams["page"][0], 10, 64)
+	if err != nil {
+		if err != nil {
+			fmt.Fprintf(w, "Error While converting to integer")
+		}
+	}
+	limit, err := strconv.ParseInt(queryParams["limit"][0], 10, 64)
+	if err != nil {
+		if err != nil {
+			fmt.Fprintf(w, "Error While converting to integer")
+		}
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+	response, err := h.serviceManager.UserService().GetList(ctx, &pb.LimitRequest{
+		Page:  page,
+		Limit: limit,
+	})
+	w.WriteHeader(http.StatusOK)
+	err = json.NewEncoder(w).Encode(response)
+	if err != nil {
+		if err != nil {
+			fmt.Fprintf(w, "Error while marshiling to json")
+		}
+		h.log.Error("failed to bind json", l.Error(err))
+		return
+	}
 }
